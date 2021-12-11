@@ -4,3 +4,4 @@ metadata:
   name: dev-env
 data:
   PORT: "9000"
+  RANDOM: "Hello ArgoCD"
