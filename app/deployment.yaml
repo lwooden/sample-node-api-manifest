@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: node-mock-api
-          image: public.ecr.aws/q0g3t5w3/node-mock-api:latest
+          image: public.ecr.aws/mock-node-api/node-mock-api:latest
           envFrom:
             - configMapRef:
                 name: dev-env
