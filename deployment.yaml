@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-mock-api
+  namespace: "default"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-mock-api
+      version: v1
+  template:
+    metadata:
+      labels:
+         app: node-mock-api
+         version: v1
+    spec:
+      containers:
+        - name: node-mock-api
+          image: public.ecr.aws/q0g3t5w3/node-mock-api:latest
+          envFrom:
+            - configMapRef:
+                name: dev-env
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 9000
