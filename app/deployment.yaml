@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: node-mock-api
-  namespace: app
 spec:
   replicas: 1
   selector:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
         - name: node-mock-api
-          image: public.ecr.aws/mock-node-api/node-mock-api:latest
+          image: public.ecr.aws/mock-node-api/lowsandbox:sample-node-api-1352b79e25406803371ee7fdab6ad1c49dac9137
           envFrom:
             - configMapRef:
                 name: dev-env
